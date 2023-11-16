@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class App {
     static Scanner lector = new Scanner(System.in);
 
-    //declaramos las variables
+    //declaramos las variables a utilizar en el programa
     static double generatriz;
     static double radio;
     static double altura;
@@ -28,7 +28,7 @@ public class App {
     static double Am;
     static double Perimetbase;
     static double Areabase;
-    static double h,g;
+    static double a,c;
     static int arista;
     static int angulo;
     static int cantidadLados;
@@ -41,10 +41,11 @@ public class App {
        menu();
     
     }
-    /*hCAEMOS UN METODO PARA EL MENU  */
+
+    /*HACEMOS UN METODO PARA EL MENU  */
     public static int menu(){
        System.out.println("Calcular el area lateral,total y volumen.");
-       System.out.println("-.-.-**Menu de opciones**-.-.- ");
+       System.out.println("*********** Menu de opciones ************ ");
        System.out.println("1)Prisma");
        System.out.println("2)Cilindro");
        System.out.println("3)Pirámide"); 
@@ -53,7 +54,7 @@ public class App {
        System.out.println("6)Zona Esférica");
        System.out.println("7)Casquete Esférico");
        System.out.println("8)Huso esférico y cuña esférica");
-       System.out.println("9)Ortoedro");
+       System.out.println("9) Ortoedro");
        System.out.println("10)Tetaedro");
        System.out.println("11)Hexaedro");
        System.out.println("12)Octaedro");
@@ -89,7 +90,7 @@ public class App {
         if (opc < 1 || opc > 17) {
             intentos1++;
             if (intentos1 >= 3) {
-                System.out.println("Has superado el número de intentos. El programa finalizará.");
+                System.out.println("****** Has superado el número de intentos. El programa finalizará.********");
                 System.exit(0);
             }
         } else {
@@ -106,13 +107,13 @@ public class App {
                         try {
                             cantidadLados = lector.nextInt();
                             if (cantidadLados <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número entero. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número entero. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos++;
                         } catch (NoSuchElementException e) {
@@ -123,7 +124,7 @@ public class App {
                     } while (intentos < 3 && !cerrado); 
                     
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     } 
                     do {
@@ -131,19 +132,19 @@ public class App {
                         if (lector.hasNextDouble()) {
                             altura = lector.nextDouble(); 
                             if (altura <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos2++;
                             } else {
                                 break; 
                             }
                         } else {
-                            System.out.println("La entrada no es un número válido. Intente nuevamente."); 
+                            System.out.println("La entrada no es un número válido. Por favor intente nuevamente."); 
                             lector.next(); 
                             intentos2++;
                         }
                     } while (intentos2 < 3);
                     if (intentos2 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! usted  superó el número máximo de intentos. El programa finalizará.");
                         break;
                     } 
                 
@@ -152,7 +153,7 @@ public class App {
                         try {
                             longitudLados = lector.nextDouble();
                             if (longitudLados <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos3++;
                             } else {
                                 break;
@@ -169,7 +170,7 @@ public class App {
                     } while (intentos3 < 3 && !cerrado); 
                     
                     if (intentos3 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     
@@ -184,19 +185,19 @@ public class App {
                         if (lector.hasNextDouble()) {
                             altura = lector.nextDouble(); 
                             if (altura <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos++;
                             } else {
                                 break; 
                             }
                         } else {
-                            System.out.println("La entrada no es un número válido. Intente nuevamente."); 
+                            System.out.println("La entrada no es un número válido. Por favor intente nuevamente."); 
                             lector.next(); 
                             intentos++;
                         }
                     } while (intentos < 3);
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     } 
                     do {
@@ -204,13 +205,13 @@ public class App {
                         try {
                             radio = lector.nextDouble();
                             if (radio <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos2++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos2++;
                         } catch (NoSuchElementException e) {
@@ -221,7 +222,7 @@ public class App {
                     } while (intentos2 < 3 && !cerrado); 
                     
                     if (intentos2 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     
@@ -236,19 +237,19 @@ public class App {
                     if (lector.hasNextDouble()) {
                             altura = lector.nextDouble(); 
                             if (altura <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos++;
                             } else {
                                 break; 
                             }
                         } else {
-                            System.out.println("La entrada no es un número válido. Intente nuevamente."); 
+                            System.out.println("La entrada no es un número válido. Por favor intente nuevamente."); 
                             lector.next(); 
                             intentos++;
                         }
                     } while (intentos < 3);
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! usted  superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     do {
@@ -262,7 +263,7 @@ public class App {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos2++;
                         } catch (NoSuchElementException e) {
@@ -273,7 +274,7 @@ public class App {
                     } while (intentos2 < 3 && !cerrado); 
                     
                     if (intentos2 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     do {
@@ -281,13 +282,13 @@ public class App {
                         try {
                             longitudLados = lector.nextDouble();
                             if (longitudLados <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos3++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos3++;
                         } catch (NoSuchElementException e) {
@@ -298,7 +299,7 @@ public class App {
                     } while (intentos3 < 3 && !cerrado); 
                     
                     if (intentos3 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                  do {
@@ -306,13 +307,13 @@ public class App {
                         try {
                             apotemaPiramide = lector.nextDouble();
                             if (apotemaPiramide <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos1++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos1++;
                         } catch (NoSuchElementException e) {
@@ -323,7 +324,7 @@ public class App {
                     } while (intentos1 < 3 && !cerrado); 
                     
                     if (intentos1 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     
@@ -337,19 +338,19 @@ public class App {
                         if (lector.hasNextDouble()) {
                             altura = lector.nextDouble(); 
                             if (altura <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos++;
                             } else {
                                 break; 
                             }
                         } else {
-                            System.out.println("La entrada no es un número válido. Intente nuevamente."); 
+                            System.out.println("La entrada no es un número válido. Por favor intente nuevamente."); 
                             lector.next(); 
                             intentos++;
                         }
                     } while (intentos < 3);
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! superó el número máximo de intentos. El programa finalizará.");
                         break;
                     } 
                     do {
@@ -363,7 +364,7 @@ public class App {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos2++;
                         } catch (NoSuchElementException e) {
@@ -374,7 +375,7 @@ public class App {
                     } while (intentos2 < 3 && !cerrado); 
                     
                     if (intentos2 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     
@@ -389,13 +390,13 @@ public class App {
             try {
                 radio = lector.nextDouble();
                 if (radio <= 0) {
-                    System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                    System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                     intentos++;
                 } else {
                     break;
                 }
             } catch (InputMismatchException e) {
-                System.out.println("El valor debe ser un número. Intente nuevamente.");
+                System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                 lector.next(); 
                 intentos++;
             } catch (NoSuchElementException e) {
@@ -406,7 +407,7 @@ public class App {
         } while (intentos < 3 && !cerrado); 
         
         if (intentos == 3) {
-            System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+            System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
             break;
         }
            CalcularEsfera(radio);
@@ -425,13 +426,13 @@ public class App {
                                 break; 
                             }
                         } else {
-                            System.out.println("La entrada no es un número válido. Intente nuevamente."); 
+                            System.out.println("La entrada no es un número válido. Por favor intente nuevamente."); 
                             lector.next(); 
                             intentos++;
                         }
                     } while (intentos < 3);
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
             
@@ -446,7 +447,7 @@ public class App {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos1++;
                         } catch (NoSuchElementException e) {
@@ -457,7 +458,7 @@ public class App {
                     } while (intentos1 < 3 && !cerrado); 
                     
                     if (intentos1 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     do {
@@ -465,13 +466,13 @@ public class App {
                         try {
                             radio = lector.nextDouble();
                             if (radio <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos2++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos2++;
                         } catch (NoSuchElementException e) {
@@ -482,7 +483,7 @@ public class App {
                     } while (intentos2 < 3 && !cerrado); 
                     
                     if (intentos2 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
 
@@ -496,19 +497,19 @@ public class App {
                         if (lector.hasNextDouble()) {
                             altura = lector.nextDouble(); 
                             if (altura <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos++;
                             } else {
                                 break; 
                             }
                         } else {
-                            System.out.println("La entrada no es un número válido. Intente nuevamente."); 
+                            System.out.println("La entrada no es un número válido. Por favor intente nuevamente."); 
                             lector.next(); 
                             intentos++;
                         }
                     } while (intentos < 3);
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted  superó el número máximo de intentos. El programa finalizará.");
                         break;
                     } 
             do {
@@ -516,13 +517,13 @@ public class App {
                         try {
                             radioM = lector.nextDouble();
                             if (radioM <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos1++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos1++;
                         } catch (NoSuchElementException e) {
@@ -533,7 +534,7 @@ public class App {
                     } while (intentos1 < 3 && !cerrado); 
                     
                     if (intentos1 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     do {
@@ -541,13 +542,13 @@ public class App {
                         try {
                             radio = lector.nextDouble();
                             if (radio <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos2++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos2++;
                         } catch (NoSuchElementException e) {
@@ -558,7 +559,7 @@ public class App {
                     } while (intentos2 < 3 && !cerrado); 
                     
                     if (intentos2 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted  superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
               
@@ -589,7 +590,7 @@ public class App {
                     } while (intentos < 3 && !cerrado); 
                     
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     do {
@@ -597,15 +598,16 @@ public class App {
                         try {
                             angulo = lector.nextInt();
                             if (angulo <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos1++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos1++;
+
                         } catch (NoSuchElementException e) {
                             System.out.println("Debe introducir un valor.");
                             intentos1++;
@@ -614,7 +616,7 @@ public class App {
                     } while (intentos1 < 3 && !cerrado); 
                     
                     if (intentos1 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                 
@@ -634,7 +636,7 @@ public class App {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos++;
                         } catch (NoSuchElementException e) {
@@ -645,7 +647,7 @@ public class App {
                     } while (intentos < 3 && !cerrado); 
                     
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                      do {
@@ -659,7 +661,7 @@ public class App {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos1++;
                         } catch (NoSuchElementException e) {
@@ -670,7 +672,7 @@ public class App {
                     } while (intentos1 < 3 && !cerrado); 
                     
                     if (intentos1 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     do {
@@ -678,13 +680,13 @@ public class App {
                         try {
                             c1 = lector.nextDouble();
                             if (c1 <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos2++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos2++;
                         } catch (NoSuchElementException e) {
@@ -695,7 +697,7 @@ public class App {
                     } while (intentos2 < 3 && !cerrado); 
                     
                     if (intentos2 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                   
@@ -709,13 +711,13 @@ public class App {
                         try {
                             arista = lector.nextInt();
                             if (arista <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número entero. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número entero. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos++;
                         } catch (NoSuchElementException e) {
@@ -726,7 +728,7 @@ public class App {
                     } while (intentos < 3 && !cerrado); 
                     
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     
@@ -757,7 +759,7 @@ public class App {
                     } while (intentos < 3 && !cerrado); 
                     
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted  superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     
@@ -771,13 +773,13 @@ public class App {
                         try {
                             arista = lector.nextInt();
                             if (arista <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número entero. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número entero. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos++;
                         } catch (NoSuchElementException e) {
@@ -788,7 +790,7 @@ public class App {
                     } while (intentos < 3 && !cerrado); 
                     
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     
@@ -820,7 +822,7 @@ public class App {
                     } while (intentos < 3 && !cerrado); 
                     
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted  superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
               
@@ -834,13 +836,13 @@ public class App {
                         try {
                             arista = lector.nextInt();
                             if (arista <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número entero. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número entero. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos++;
                         } catch (NoSuchElementException e) {
@@ -851,7 +853,7 @@ public class App {
                     } while (intentos < 3 && !cerrado); 
                     
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
 
@@ -865,19 +867,19 @@ public class App {
                         if (lector.hasNextDouble()) {
                             altura = lector.nextDouble(); 
                             if (altura <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos++;
                             } else {
                                 break; 
                             }
                         } else {
-                            System.out.println("La entrada no es un número válido. Intente nuevamente."); 
+                            System.out.println("La entrada no es un número válido. Por favor intente nuevamente."); 
                             lector.next(); 
                             intentos++;
                         }
                     } while (intentos < 3);
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     } 
                     do {
@@ -891,9 +893,10 @@ public class App {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos1++;
+
                         } catch (NoSuchElementException e) {
                             System.out.println("Debe introducir un valor.");
                             intentos1++;
@@ -902,7 +905,7 @@ public class App {
                     } while (intentos1 < 3 && !cerrado); 
                     
                     if (intentos1 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                     do {
@@ -910,13 +913,13 @@ public class App {
                         try {
                             radioM = lector.nextDouble();
                             if (radioM <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos2++;
                             } else {
                                 break;
                             }
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos2++;
                         } catch (NoSuchElementException e) {
@@ -927,7 +930,7 @@ public class App {
                     } while (intentos2 < 3 && !cerrado); 
                     
                     if (intentos2 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error!! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                    
@@ -941,15 +944,18 @@ public class App {
                         try {
                             AM = lector.nextDouble();
                             if (AM <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos++;
                             } else {
                                 break;
                             }
+                            //conn esta excepcion solo se admitiran valores numericos
                         } catch (InputMismatchException e) {
-                            System.out.println("El valor debe ser un número. Intente nuevamente.");
+                            System.out.println("El valor debe ser un número. Por favor intente nuevamente.");
                             lector.next(); 
                             intentos++;
+
+                            //
                         } catch (NoSuchElementException e) {
                             System.out.println("Debe introducir un valor.");
                             intentos++;
@@ -958,24 +964,28 @@ public class App {
                     } while (intentos < 3 && !cerrado); 
                     
                     if (intentos == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted  superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                    
                    do {
+                    //pedimos los datos al usuario 
                         System.out.print("Ingrese el valor del radio Menor: ");
                         try {
                             Am = lector.nextDouble();
                             if (Am <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos1++;
                             } else {
                                 break;
                             }
+                            //utlizamos esta excepcion para solo introducir valores numericos 
                         } catch (InputMismatchException e) {
                             System.out.println("El valor debe ser un número. Intente nuevamente.");
                             lector.next(); 
                             intentos1++;
+
+                            //
                         } catch (NoSuchElementException e) {
                             System.out.println("Debe introducir un valor.");
                             intentos1++;
@@ -984,27 +994,28 @@ public class App {
                     } while (intentos1 < 3 && !cerrado); 
                     
                     if (intentos1 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     }
                      do {
+                        //pedimos los datos al usuario 
                         System.out.print("Ingrese el valor de la altura: ");
                         if (lector.hasNextDouble()) {
                             altura = lector.nextDouble(); 
                             if (altura <= 0) {
-                                System.out.println("El valor debe ser mayor a cero. Intente nuevamente.");
+                                System.out.println("El valor debe ser mayor a cero. Por favor intente nuevamente.");
                                 intentos2++;
                             } else {
                                 break; 
                             }
                         } else {
-                            System.out.println("La entrada no es un número válido. Intente nuevamente."); 
+                            System.out.println("La entrada no es un número válido. Por favor intente nuevamente."); 
                             lector.next(); 
                             intentos2++;
                         }
                     } while (intentos2 < 3);
                     if (intentos2 == 3) {
-                        System.out.println("Se superó el número máximo de intentos. El programa finalizará.");
+                        System.out.println("Error! usted superó el número máximo de intentos. El programa finalizará.");
                         break;
                     } 
                    
@@ -1013,11 +1024,13 @@ public class App {
             break;
 
             case 17:
-                   System.out.println("Ha decidido salir del programa.¡Vuelva pronto!(*u*)");
+                   System.out.println("******** Ha decidido salir del programa ******");
             break;
             }
            return opc;
       }
+             /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del prisma */
        public static void CalcularPrisma(int cantidadLados,double altura,double longitudLados){
          perimetroBase = cantidadLados * longitudLados;
          areaL = perimetroBase * altura;
@@ -1033,7 +1046,8 @@ public class App {
          System.out.println("Volumen: " + Volumen);
         
        }
-
+            /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del cilindro */
        public static void CalcularCilindro(double radio,double altura){
          perimetroBase = 2*Math.PI*radio;
          areaL = perimetroBase*altura;
@@ -1046,7 +1060,8 @@ public class App {
         System.out.println("El Area Total del cubo es: " + areaTotal);
         System.out.println("El volumen del cubo es: " + Volumen);
             }
-        
+              /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones de la piramide  */
          public static void CalcularPiramide(double altura,int cantidadLados,double apotemaPiramide,double longitudLados){
          perimetroBase = cantidadLados * longitudLados;
          apotemaPiramide = (Math.sqrt(altura*altura)+(apotema*apotema));
@@ -1061,6 +1076,8 @@ public class App {
          System.out.println("El volumen de la pirámide es: "+Volumen);
         }
 
+         /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del cono */
         public static void CalcularCono(double radio,double altura){
          perimetroBase = (Math.PI*radio);
          generatriz = Math.sqrt((radio*radio)+(altura*altura));
@@ -1074,7 +1091,8 @@ public class App {
          System.out.println("El area total del cono es: "+areaTotal);
          System.out.println("el volumen del cono es: "+Volumen);
         }
-
+           /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones de esfera*/
        public static void  CalcularEsfera(double radio){
           area = 4*Math.PI*(radio*radio);
           Volumen = 4.0/3.0*Math.PI*(radio*radio*radio);
@@ -1084,6 +1102,8 @@ public class App {
          System.out.println("El valor del volumen es: "+Volumen);
        }
 
+        /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del zona esferica */
        public static void CalcularZonaEsferica(double radio,double radioM,double altura){
          area = 2*Math.PI*radioM*altura;
          Volumen = Math.PI*altura*((altura*altura)+3*radioM+3*radio)/6;
@@ -1092,7 +1112,8 @@ public class App {
          System.out.println("El area de la zona esferica es: "+area);
          System.out.println("El volumen de la zona esferica es: "+Volumen);
        }
-
+         /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del casquete esferico */
        public static void calcularCasqueteEsferico(double altura,double radio,double radioM){
         area = 2*Math.PI*radioM*altura;
         aream = Math.PI*((radio*radio)+(altura*altura));
@@ -1107,6 +1128,8 @@ public class App {
 
        }
 
+        /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del hueso y cuña esferica */
        public static void calcularHusoCuñaEsferica(double radio,double angulo){
          area = 4*(Math.PI*(radio*radio)*angulo/360);
          Volumen = (4.0/3.0)*(Math.PI*(radio*radio*radio)*angulo/360);
@@ -1116,6 +1139,8 @@ public class App {
          System.out.println("El volumen de una cuña esferica es: "+Volumen);
        }
 
+             /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del ortoedro*/
        public static void CalcularOrtoedro(double a,double b,double c){
          area = 2*(a*b+a*c+b*c);
          diagonal = Math.sqrt((a*a)+(b*b)+(c*c));
@@ -1127,6 +1152,8 @@ public class App {
         System.out.println("El valor de la diagonal es: "+diagonal);
        }
 
+        /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del tetaedro */
        public static void calcularTetaedro(int arista){
              area = ((arista*arista)*Math.sqrt(3));
              altura = (arista*(Math.sqrt(6)/3));
@@ -1138,7 +1165,8 @@ public class App {
              System.out.println("El valor del volumen es: "+Volumen);
 
        }
-
+         /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del thexaedro*/
        public static void calcularHexaedro(int arista){
         area = (6*(arista*arista));
         Volumen = (arista*arista*arista);
@@ -1160,7 +1188,8 @@ public class App {
        System.out.println("El valor del area de la cara es: "+areaCara);
        System.out.println("El valor del volumen es: "+Volumen);
       }
-
+           /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del dodecaedro */
       public static void calcularDodecaedro(int arista){
          double alfa = 36*(Math.PI/180);
          apotema = (arista/2*Math.tan(alfa));
@@ -1174,6 +1203,8 @@ public class App {
          System.out.println("El volumen del dodecaedro es: "+Volumen);
       }
 
+             /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del icosaedro */
       public static void calcularIcosaedro(int arista){
          areaTotal = (5*(arista*arista)*Math.sqrt(3));
          areaCara = areaTotal/20;
@@ -1183,7 +1214,8 @@ public class App {
          System.out.println("El valor del area Toltal es: "+areaTotal);
          System.out.println("El valor del area de las caras es: "+areaCara);
       }
-
+            /* creamos un  metodo y dentro del mismo 
+            hacemos las operaciones del tronco de cono */
       public static void calcularTroncodeCono(double altura,double radio,double radioM){
          generatriz = Math.sqrt((altura*altura)+(radioM*radioM-radio*radio));
          areaL = Math.PI*generatriz*(radioM+radio);
@@ -1198,9 +1230,13 @@ public class App {
          System.out.println("El area total es: "+areaTotal);
          System.out.println("El volumen es: "+Volumen);
       }
-
+          
+            /*Creamos un metodo para hacer las operaciones
+             del tornco de piramide
+          ' */
       public static void calcularTroncodepiramide(double altura,double Am, double AM){
                 c= (AM-Am)/2;
+
                 a = Math.sqrt((altura*altura)+(c*c));
                 perimetroBase = AM*altura; 
                 Perimetbase = Am*altura;
